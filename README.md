@@ -32,4 +32,6 @@ When trying to use cameras for computer vision applications the camera you are u
 
 There are multiple methods of calibrating a camera, we will be using the checkerboard method.
 
-### Obtain a checkerboard calibration board
+### 1. Obtain a checkerboard calibration board
+Checkerboards for callibration can be obtained at this website.
+This is the excat [checkerboard](https://raw.githubusercontent.com/MarkHedleyJones/markhedleyjones.github.io/master/media/calibration-checkerboard-collection/Checkerboard-A4-25mm-10x7.pdf) I used.
