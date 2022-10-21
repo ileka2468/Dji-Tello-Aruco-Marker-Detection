@@ -25,4 +25,11 @@ pip install opencv-contrib-python
 pip install djitellopy
  ```
 
+---------------------
+## Camera Calibration 📷 📈
 
+When trying to use cameras for computer vision applications the camera you are using needs to be **calibrated** so that the pose estiamtions and distance calculations can be as accurate as posible. Naturally, all cameras have a **distortion** effect to them, some cameras may pull the picture at the frame, and some may squeeze the image at the center. To fix this we need to counteract the image distortion, luckily OpenCv makes this quiote easy for us using the **calibrateCamera()** function.
+
+There are multiple methods of calibrating a camera, we will be using the checkerboard method.
+
+### Obtain a checkerboard calibration board
