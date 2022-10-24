@@ -37,7 +37,7 @@ Checkerboards for calibration can be obtained at this website https://markhedley
 
 This is the exact [checkerboard](https://raw.githubusercontent.com/MarkHedleyJones/markhedleyjones.github.io/master/media/calibration-checkerboard-collection/Checkerboard-A4-25mm-10x7.pdf) I used.
 
-### 1. Take pictures of the checkerboard.
+### 2. Take pictures of the checkerboard.
 #### I wrote a script to take pictures of the checkerboard, it will take 1 picture every 30 frames.
 
 To calibrate the camera, we need around 100 - 200 images of the checkerboard at lots of different angles and different distances. So, there is a script called CameraCap.py. If you're using a Tello drone, everything is already set up to run; all you need to do is connect the drone to your PC's wifi and run the script.
@@ -62,9 +62,9 @@ cam.set(cv.CAP_PROP_FPS, 30)
 
 ```
 
-### How to take the pictures.
+#### How to take the pictures.
 
-#### Option 1 - Hold the checkerboard (Reccommended).
+##### Option 1 - Hold the checkerboard (Reccommended).
 
 You have two options for deciding how you want to take the pictures. You can either paste the checkerboard on a board (refer to the image below) for maximum contrast. Then hold the board in your hands and move it around the camera frame like the guy pictured below ⬇️
 
@@ -72,10 +72,22 @@ You have two options for deciding how you want to take the pictures. You can eit
 
 #### Option 2 - Put the checkerboard on a wall.
 
-Alternatively, you can 
+Alternatively, you can put the checkerboard on a wall, and move the camera around the checkerboard. If you use this method make sure the surface the checkerboard is on has enough contrast so the calibration doesn't mistake the surroundings as part of the checkerboard.
 
 
 When you think you have taken enough images, press "q" on your keyboard to terminate the script, and in the working directory, you will see all of the images the camera took.
 
+### 3. Run distortion calibration script
+
+After going through all your images and making sure they are high quality, run the distortion calibration script. Make sure your images are in the same working directory as the script. If they are not, edit the path in the script to reflect the actual location.
+
+```python
+# Pulls all .jpg files in working directory
+list_images = glob.glob('*.jpg')
+```
+
+When you run the script you will see drawing rainbow lines onto the checkerboard, once this fisnishes the window will close, but the script is not done running. Depending on the number of images you have the script will compute the distortion calibration and write it to a .npy file. When the program ends you will see printed values in the console. The program should look like this:
+
+![Checkerboard calibration](https://i.ibb.co/jZzKFZ3/elJx1-50.jpg)
 
 
